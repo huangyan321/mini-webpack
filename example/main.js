@@ -1,3 +1,4 @@
 import { foo } from './foo.js';
-console.log('main');
+import md from './test.md';
+console.log(md);
 foo();

@@ -18,10 +18,15 @@
       'use strict';
 
       var _foo = require('./foo.js');
-      console.log('main');
+      var _test = require('./test.md');
+      var _test2 = _interopRequireDefault(_test);
+      function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : { default: obj };
+      }
+      console.log(_test2.default);
       (0, _foo.foo)();
     },
-    { './foo.js': 2 },
+    { './foo.js': 2, './test.md': 3 },
   ],
 
   2: [
@@ -38,10 +43,22 @@
         console.log('foo');
       }
     },
-    { './bar.js': 3 },
+    { './bar.js': 4 },
   ],
 
   3: [
+    function (require, module, exports) {
+      'use strict';
+
+      Object.defineProperty(exports, '__esModule', {
+        value: true,
+      });
+      exports.default = '# 哈哈哈哈';
+    },
+    {},
+  ],
+
+  4: [
     function (require, module, exports) {
       'use strict';
 
